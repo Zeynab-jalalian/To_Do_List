@@ -38,9 +38,20 @@ const newTask = () => {
   const editBtn = document.querySelectorAll(".edit");
   editBtn.forEach((ed) => {
     ed.addEventListener("click", () => {
-     taskInput.value=`${taskVal}`;
-     taskInput.focus();
-     ed.parentNode.remove();
+      taskInput.value = `${taskVal}`;
+      taskInput.focus();
+      ed.parentNode.remove();
+    });
+  });
+
+  const stars = document.querySelectorAll(".star i");
+  stars.forEach((s) => {
+    s.addEventListener("click", () => {
+      if (s.classList.contains("bi-star")) {
+        s.classList.replace("bi-star", "bi-star-fill");
+      } else {
+        s.classList.replace("bi-star-fill", "bi-star");
+      }
     });
   });
 
@@ -52,9 +63,8 @@ taskInput.focus();
 
 addBtn.addEventListener("click", newTask);
 
-taskInput.addEventListener("keydown",(e)=>{
-    if(e.key==="Enter"){
-        newTask();
-    }
-})
-
+taskInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    newTask();
+  }
+});

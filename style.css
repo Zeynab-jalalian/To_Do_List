@@ -107,11 +107,6 @@ body {
 .task .delete i:hover {
   color: darkred;
 }
-
-.task .star i:hover {
-  color: goldenrod;
-}
-
 .error {
   margin-top: 10px;
   color: crimson;
