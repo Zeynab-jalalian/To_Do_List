@@ -8,7 +8,7 @@ const newTask = () => {
   error.style.display = "none";
   if (!taskVal) {
     error.style.display = "block";
-    taskInput.focus(); 
+    taskInput.focus();
     return;
   }
   const task = `
@@ -27,8 +27,25 @@ const newTask = () => {
         </div>
   `;
   tasks.insertAdjacentHTML("beforeend", task);
+
+  const deleteBtn = document.querySelectorAll(".delete");
+  deleteBtn.forEach((d) => {
+    d.addEventListener("click", () => {
+      d.parentNode.remove();
+    });
+  });
+
   taskInput.value = "";
   taskInput.focus();
 };
 
+taskInput.focus();
+
 addBtn.addEventListener("click", newTask);
+
+taskInput.addEventListener("keydown",(e)=>{
+    if(e.key==="Enter"){
+        newTask();
+    }
+})
+
