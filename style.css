@@ -114,9 +114,29 @@ body {
   text-align: center;
   display: none;
 }
-.checkbox{
-    cursor: pointer;
+.checkbox {
+  cursor: pointer;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #5563d6;
+  outline: none;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #fff;
 }
+
+
+.checkbox:checked {
+  background-color: #5563d6;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #8d8d8d;
+}
+
 @media (max-width: 480px) {
   .wrapper {
     flex-direction: column;

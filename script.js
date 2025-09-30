@@ -32,6 +32,7 @@ const newTask = () => {
   deleteBtn.forEach((d) => {
     d.addEventListener("click", () => {
       d.parentNode.remove();
+       taskInput.focus();
     });
   });
 
@@ -52,8 +53,17 @@ const newTask = () => {
       } else {
         s.classList.replace("bi-star-fill", "bi-star");
       }
+       taskInput.focus();
     });
   });
+
+  const checkboxes=document.querySelectorAll(".checkbox");
+  checkboxes.forEach((c)=>{
+    c.addEventListener("change",()=>{
+      c.nextElementSibling.classList.toggle("completed");
+       taskInput.focus();
+    })
+  })
 
   taskInput.value = "";
   taskInput.focus();
