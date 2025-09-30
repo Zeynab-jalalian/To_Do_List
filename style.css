@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.wrapper input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.wrapper input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.wrapper button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wrapper button:hover {
+  background: #5563d6;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  align-items: center;
+  gap: 10px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 12px 15px;
+  transition: 0.3s;
+}
+
+.task:hover {
+  background: #f1f1f1;
+}
+
+.task .taskName {
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.task .edit i,
+.task .delete i,
+.task .star i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task .delete i {
+  color: crimson;
+}
+
+.task .edit i {
+  color: #5265cc;
+}
+.task .star {
+  color: orange;
+}
+.task .edit i:hover {
+  color: #3345aa;
+}
+
+.task .delete i:hover {
+  color: darkred;
+}
+
+.task .star i:hover {
+  color: goldenrod;
+}
+
+.error {
+  margin-top: 10px;
+  color: crimson;
+  font-size: 0.9rem;
+  text-align: center;
+  display: none;
+}
+.checkbox{
+    cursor: pointer;
+}
+@media (max-width: 480px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper button {
+    width: 100%;
+  }
+
+  .task {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "checkbox name edit"
+      "checkbox name delete"
+      "checkbox name star";
+    row-gap: 5px;
+  }
+
+  .task .checkbox {
+    grid-area: checkbox;
+  }
+
+  .task .taskName {
+    grid-area: name;
+  }
+
+  .task .edit {
+    grid-area: edit;
+  }
+
+  .task .delete {
+    grid-area: delete;
+  }
+
+  .task .star {
+    grid-area: star;
+  }
+}

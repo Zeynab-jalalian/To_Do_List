@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
     <title>To Do List</title>
-</head>
-<body>
-    
-
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <input type="text" placeholder="New Task..." />
+        <button>Add</button>
+      </div>
+      <div class="tasks"></div>
+      <div class="error">The input can't be empty</div>
+    </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
+<!--
+<div class="task">
+          <input type="checkbox" class="checkbox" />
+          <p class="taskName">Rading My Book</p>
+          <div class="edit">
+            <i class="bi bi-pencil-square"></i>
+          </div>
+          <div class="delete">
+            <i class="bi bi-trash"></i>
+          </div>
+          <div class="star">
+            <i class="bi bi-star"></i>
+          </div>
+        </div>
+-->
