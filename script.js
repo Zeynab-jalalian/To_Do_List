@@ -35,6 +35,15 @@ const newTask = () => {
     });
   });
 
+  const editBtn = document.querySelectorAll(".edit");
+  editBtn.forEach((ed) => {
+    ed.addEventListener("click", () => {
+     taskInput.value=`${taskVal}`;
+     taskInput.focus();
+     ed.parentNode.remove();
+    });
+  });
+
   taskInput.value = "";
   taskInput.focus();
 };
